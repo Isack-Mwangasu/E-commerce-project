@@ -1,0 +1,25 @@
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.hero-section {
+  background-color: #0d1117;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.car-hero-image {
+  max-width: 600px;
+  margin-top: 2rem;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+}
+
+.scroll-text {
+  animation: pulse 2s infinite;
+  color: #ffffffaa;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}

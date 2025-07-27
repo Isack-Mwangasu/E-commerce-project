@@ -1,0 +1,128 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto Hustle by Mbugua</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/bootstrap-5.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/icons-1.13.1/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Auto Hustle by Mbugua</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Why Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Featured Cars</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section text-white d-flex flex-column justify-content-center align-items-center text-center" style="min-height: 100vh; background-color: #0d1117;">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-3">Kenya’s <span class="text-warning">trusted</span> car sourcing partner</h1>
+    <p class="lead mb-4">Auto Hustle by Mbugua – We handle the hard part so you drive away with peace of mind.</p>
+
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+      <button class="btn btn-light px-4 py-2">Explore Vehicles</button>
+      <button class="btn btn-outline-light px-4 py-2">Import a Car</button>
+      <button class="btn btn-outline-light px-4 py-2">Sell Your Car</button>
+    </div>
+
+    <p class="scroll-text fst-italic mb-2">Scroll down</p>
+    <div class="arrow-down text-center">
+      <i class="bi bi-chevron-down fs-2 text-light"></i>
+    </div>
+
+    <img src="assets/img/benz.svg" alt="Featured Car" class="img-fluid mt-5 car-hero-image">
+  </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-4">How We Make Your Car Dreams Come True</h2>
+    <p class="lead">
+      We help you source, import, buy, and sell quality cars in Kenya. At Auto Hustle by Mbugua, we handle the hard part so you drive away with peace of mind.
+    </p>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section id="features" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Why Choose Us</h2>
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="mb-3"><i class="bi bi-shield-check" style="font-size: 2rem;"></i></div>
+        <h5>Trusted Dealer</h5>
+        <p>Years of experience sourcing quality vehicles.</p>
+      </div>
+      <div class="col-md-3">
+        <div class="mb-3"><i class="bi bi-currency-exchange" style="font-size: 2rem;"></i></div>
+        <h5>Affordable Pricing</h5>
+        <p>Get the best deals for your budget.</p>
+      </div>
+      <div class="col-md-3">
+        <div class="mb-3"><i class="bi bi-truck" style="font-size: 2rem;"></i></div>
+        <h5>Import Assistance</h5>
+        <p>We handle shipping, customs, and documentation.</p>
+      </div>
+      <div class="col-md-3">
+        <div class="mb-3"><i class="bi bi-hand-thumbs-up" style="font-size: 2rem;"></i></div>
+        <h5>Hustle-Free Service</h5>
+        <p>We simplify the process so you relax and drive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Section -->
+<section id="products" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Featured Cars</h2>
+    <!-- Category Buttons -->
+    <div class="text-center mb-4">
+      <button class="btn btn-outline-primary category-btn" data-category="All">All</button>
+      <button class="btn btn-outline-primary category-btn" data-category="Sedan">Sedan</button>
+      <button class="btn btn-outline-primary category-btn" data-category="SUV">SUV</button>
+      <button class="btn btn-outline-primary category-btn" data-category="Truck">Truck</button>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="mb-4 text-center">
+      <input type="text" id="searchInput" class="form-control w-50 mx-auto" placeholder="Search for a car...">
+    </div>
+
+    <!-- Product Grid -->
+    <div class="row" id="product-list">
+      <!-- JavaScript will insert product cards here -->
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="bg-primary text-white text-center py-4">
+  <h4 class="mb-2">Still unsure?</h4>
+  <p>Contact us today for a personalized car sourcing experience.</p>
+  <a href="https://wa.me/254712345678" class="btn btn-light me-2">WhatsApp Us</a>
+  <a href="https://instagram.com/auto.hustle" class="btn btn-light">Instagram</a>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="assets/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
