@@ -23,3 +23,11 @@
   0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
 }
+
+.logo-circle {
+  border-radius: 50%;
+  object-fit: cover;
+}
+html {
+  scroll-behavior: smooth;
+}

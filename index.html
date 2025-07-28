@@ -14,10 +14,18 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Auto Hustle by Mbugua</a>
+    <!-- Brand with Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+     <img src="assets/img/logo.jpeg" alt="Logo" width="40" height="40" class="me-2 logo-circle">
+      Auto Hustle by Mbugua
+    </a>
+
+    <!-- Mobile Toggle -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Navbar Links -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -28,6 +36,7 @@
   </div>
 </nav>
 
+
 <!-- Hero Section -->
 <section class="hero-section text-white d-flex flex-column justify-content-center align-items-center text-center" style="min-height: 100vh; background-color: #0d1117;">
   <div class="container">
@@ -36,13 +45,13 @@
 
     <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
       <button class="btn btn-light px-4 py-2">Explore Vehicles</button>
-      <button class="btn btn-outline-light px-4 py-2">Import a Car</button>
-      <button class="btn btn-outline-light px-4 py-2">Sell Your Car</button>
     </div>
 
-    <p class="scroll-text fst-italic mb-2">Scroll down</p>
+       <p class="scroll-text fst-italic mb-2">Scroll down</p>
     <div class="arrow-down text-center">
-      <i class="bi bi-chevron-down fs-2 text-light"></i>
+      <a href="#about" class="text-light">
+        <i class="bi bi-chevron-down fs-2"></i>
+      </a>
     </div>
 
     <img src="assets/img/benz.svg" alt="Featured Car" class="img-fluid mt-5 car-hero-image">
