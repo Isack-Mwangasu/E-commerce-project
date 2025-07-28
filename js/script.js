@@ -48,5 +48,5 @@ document.querySelectorAll('.category-btn').forEach(btn => {
 
 // Placeholder function for product details
 function showDetails(id) {
-  alert(`You clicked on product ID: ${id}`);
+   window.location.href = `product.html?id=${id}`;
 }

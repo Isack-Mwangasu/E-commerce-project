@@ -45,3 +45,31 @@ html {
   background-color: #fff;
   color: #000;
 }
+/* Product page styles */
+body.product-page {
+  background-color: #0d1117;
+  color: #fff;
+}
+
+.card {
+  background-color: #161b22;
+  border: none;
+}
+
+.card-title, .card-text, .btn {
+  color: #fff;
+}
+
+.btn-dark-outline {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.btn-dark-outline:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.sidebar {
+  border-right: 1px solid #333;
+}
