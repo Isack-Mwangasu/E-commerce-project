@@ -31,3 +31,17 @@
 html {
   scroll-behavior: smooth;
 }
+.search-section .input-group-text,
+.search-section .form-control {
+  border-radius: 0;
+}
+
+.search-section .btn-outline-secondary {
+  color: #fff;
+  border-color: #444;
+}
+
+.search-section .btn-outline-secondary:hover {
+  background-color: #fff;
+  color: #000;
+}
