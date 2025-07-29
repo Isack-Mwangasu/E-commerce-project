@@ -73,3 +73,177 @@ body.product-page {
 .sidebar {
   border-right: 1px solid #333;
 }
+/* ...existing code... */
+
+/* Car Detail Page Styles - Add this at the end */
+.car-detail-container {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.car-detail-img {
+  height: 70vh;
+  width: 50%;
+  object-fit: cover;
+}
+
+.car-detail-info {
+  padding: 3rem;
+  background: rgba(13, 17, 23, 0.95);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.car-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.price-badge {
+  background: linear-gradient(135deg, #ffc107, #ff8c00);
+  padding: 20px 40px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Related Cars Section */
+.related-cars-section {
+  background: rgba(22, 27, 34, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.related-cars-section h2 {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.related-cars-section .card {
+  background-color: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.related-cars-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.related-cars-section .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.related-cars-section .card-title,
+.related-cars-section .card-text {
+  color: #fff;
+}
+
+.specs-list {
+  list-style: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.specs-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.specs-list li:last-child {
+  border-bottom: none;
+}
+
+/* Carousel improvements */
+.carousel-control-prev,
+.carousel-control-next {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border: 2px solid #fff;
+  border-radius: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  opacity: 0.9 !important;
+  z-index: 10;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(255, 193, 7, 0.9) !important;
+  border-color: #ffc107;
+  opacity: 1 !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background-size: 100% 100% !important;
+  filter: brightness(0) invert(1);
+}
+
+/* Add carousel indicators (dots) */
+.carousel-indicators {
+  bottom: 20px !important;
+  margin-bottom: 0;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 15px !important;
+  height: 15px !important;
+  margin: 0 8px !important;
+  opacity: 0.7;
+}
+
+.carousel-indicators .active {
+  background-color: #ffc107 !important;
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.6);
+}
+
+/* Ensure carousel has proper positioning */
+.carousel {
+  position: relative !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .car-title {
+    font-size: 2.5rem;
+  }
+  
+  .car-detail-info {
+    padding: 2rem;
+  }
+  
+  .car-detail-img {
+    height: 50vh;
+  }
+  
+  .related-cars-section {
+    padding: 2rem 0;
+  }
+  
+  .related-cars-section .card-img-top {
+    height: 180px;
+  }
+}
