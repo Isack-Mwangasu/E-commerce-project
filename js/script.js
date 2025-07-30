@@ -15,34 +15,20 @@ const cars = [
   },
   { 
     id: 2, 
-    name: "Ford Ranger", 
+    name: "Toyota Kluger", 
     category: "Truck", 
     images: [
-      "assets/img/ford-ranger.jpeg",
-      "assets/img/ranger-interior.jpeg",
-      "assets/img/ranger-side.jpeg"
+       "assets/img/Toyota Kluger front.jpeg",
+      "assets/img/Toyota Kluger back.jpeg",
     ],
     description: "Powerful truck built for tough jobs.",
     price: "3,200,000 KSH",
     features: ["4WD", "Turbo Diesel", "Automatic", "Double Cab"]
   },
-  { 
-    id: 3, 
-    name: "Isuzu D-Max", 
-    category: "Truck", 
-    images: [
-      "assets/img/isuzu-dmax.jpeg",
-      "assets/img/dmax-interior.jpeg",
-      "assets/img/dmax-side.jpeg"
-    ],
-    description: "Durable and dependable workhorse.",
-    price: "2,800,000 KSH",
-    features: ["4WD", "Diesel Engine", "Automatic", "5 Seats"]
-  },
   
   // SUVs
   { 
-    id: 4, 
+    id: 3, // Changed from 4 to 3
     name: "Land Rover Discovery", 
     category: "SUV", 
     images: [
@@ -56,36 +42,10 @@ const cars = [
     price: "5,800,000 KSH",
     features: ["AWD", "V6 Engine", "7 Seats", "Terrain Response"]
   },
-  { 
-    id: 5, 
-    name: "Toyota Land Cruiser", 
-    category: "SUV", 
-    images: [
-      "assets/img/landcruiser.jpeg",
-      "assets/img/landcruiser-interior.jpeg",
-      "assets/img/landcruiser-side.jpeg"
-    ],
-    description: "The ultimate off-road vehicle.",
-    price: "8,000,000 KSH",
-    features: ["4WD", "V8 Engine", "Automatic", "7 Seats"]
-  },
-  { 
-    id: 6, 
-    name: "BMW X5", 
-    category: "SUV", 
-    images: [
-      "assets/img/bmw-x5.jpeg",
-      "assets/img/x5-interior.jpeg",
-      "assets/img/x5-side.jpeg"
-    ],
-    description: "Luxury SUV with premium features.",
-    price: "10,500,000 KSH",
-    features: ["AWD", "Turbocharged Engine", "Automatic", "5 Seats"]
-  },
   
   // Sedans
   { 
-    id: 7, 
+    id: 4, // Changed from 7 to 4
     name: "Subaru Impreza", 
     category: "Sedan", 
     images: [
@@ -107,7 +67,7 @@ const cars = [
     features: ["AWD", "Petrol Engine", "Manual Transmission", "5 Seats"]
   },
   { 
-    id: 8, 
+    id: 5, // Changed from 8 to 5
     name: "juke Toyota Camry", 
     category: "Sedan", 
     images: [
@@ -131,17 +91,42 @@ const cars = [
     features: ["FWD", "Hybrid Engine", "Automatic", "5 Seats"]
   },
   { 
-    id: 9, 
-    name: "Honda Accord", 
+    id: 6, // Changed from 9 to 6
+    name: "kulger", 
     category: "Sedan", 
     images: [
-      "assets/img/honda-accord.jpeg",
-      "assets/img/accord-interior.jpeg",
-      "assets/img/accord-side.jpeg"
+      "assets/img/kulger2.jpeg",
+      "assets/img/kulger3.jpeg",
+      "assets/img/Kulger 1.jpeg",
+      "assets/img/kulger4.jpeg",
     ],
     description: "Spacious and efficient midsize sedan.",
     price: "2,500,000 KSH",
     features: ["FWD", "Petrol Engine", "Automatic", "5 Seats"]
+  },
+  { 
+    id: 7, // Changed from 10 to 7
+    name: "Premio", 
+    category: "Sedan", 
+    images: [
+      "assets/img/Premio front.jpeg",
+      "assets/img/Premio back.jpeg",
+    ],
+    description: "Premium midsize sedan with advanced safety features and excellent fuel economy.",
+    price: "3,800,000 KSH",
+    features: ["FWD", "Turbo Engine", "CVT Automatic", "5 Seats", "Honda Sensing"]
+  },
+  { 
+    id: 8, // Changed from 11 to 8
+    name: "probox", 
+    category: "Sedan", 
+    images: [
+      "assets/img/Probox front.jpeg",
+      "assets/img/Probox back.jpeg",
+    ],
+    description: "Luxury sports sedan with premium interior and dynamic driving performance.",
+    price: "6,500,000 KSH",
+    features: ["RWD", "Turbo Engine", "8-Speed Automatic", "5 Seats", "BMW ConnectedDrive"]
   }
 ];
 
@@ -153,24 +138,41 @@ function loadProducts(products) {
   const productList = document.getElementById("product-list");
   if (!productList) return;
   
-  productList.innerHTML = "";
+  // Show loading
+  productList.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
   
-  products.forEach(car => {
-    const productCard = `
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <img src="${car.images[0]}" class="card-img-top" alt="${car.name}">
-          <div class="card-body">
-            <h5 class="card-title">${car.name}</h5>
-            <p class="card-text">${car.description}</p>
-            <p class="text-muted">Category: ${car.category}</p>
-            <a href="car-detail.html?id=${car.id}" class="btn btn-outline-dark">View Details</a>
+  // Simulate loading delay for better UX
+  setTimeout(() => {
+    productList.innerHTML = "";
+    
+    if (products.length === 0) {
+      productList.innerHTML = `
+        <div class="col-12 text-center">
+          <h3>No vehicles found</h3>
+          <p>Try adjusting your search criteria.</p>
+        </div>
+      `;
+      return;
+    }
+    
+    products.forEach(car => {
+      const productCard = `
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="${car.images[0]}" class="card-img-top" alt="${car.name}" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">${car.name}</h5>
+              <p class="card-text">${car.description}</p>
+              <p class="text-warning fw-bold">${car.price}</p>
+              <p class="text-muted">Category: ${car.category}</p>
+              <a href="car-detail.html?id=${car.id}" class="btn btn-warning w-100">View Details</a>
+            </div>
           </div>
         </div>
-      </div>
-    `;
-    productList.innerHTML += productCard;
-  });
+      `;
+      productList.innerHTML += productCard;
+    });
+  }, 300);
 }
 
 // Check which page we're on and load appropriate cars
@@ -185,6 +187,7 @@ if (productList && window.location.pathname.includes('index.html')) {
 // Product page: Load all cars
 else if (productList && window.location.pathname.includes('product.html')) {
   loadProducts(cars);
+  setupSearch();
 }
 
 // Enhanced Car detail page with related cars
@@ -198,15 +201,11 @@ else if (carDetail) {
     const relatedCars = cars.filter(c => c.category === car.category && c.id !== car.id).slice(0, 3);
     
     // Create image carousel
-    const imageCarousel = car.images ? car.images.map((img, index) => `
+    const imageCarousel = car.images.map((img, index) => `
       <div class="carousel-item ${index === 0 ? 'active' : ''}">
-        <img src="${img}" class="d-block w-100 car-detail-img" alt="${car.name}">
+        <img src="${img}" class="d-block w-100 car-detail-img" alt="${car.name}" loading="lazy">
       </div>
-    `).join('') : `
-      <div class="carousel-item active">
-        <img src="${car.image || car.images[0]}" class="d-block w-100 car-detail-img" alt="${car.name}">
-      </div>
-    `;
+    `).join('');
 
     carDetail.innerHTML = `
       <!-- Main Car Detail Section -->
@@ -215,8 +214,7 @@ else if (carDetail) {
           <div class="carousel-inner rounded">
             ${imageCarousel}
           </div>
-          ${car.images && car.images.length > 1 ? `
-            <!-- Navigation Arrows -->
+          ${car.images.length > 1 ? `
             <button class="carousel-control-prev" type="button" data-bs-target="#carImageCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -225,8 +223,6 @@ else if (carDetail) {
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-            
-            <!-- Indicator Dots -->
             <div class="carousel-indicators">
               ${car.images.map((_, index) => `
                 <button type="button" data-bs-target="#carImageCarousel" data-bs-slide-to="${index}" 
@@ -242,7 +238,7 @@ else if (carDetail) {
         <div class="car-detail-info">
           <h1 class="car-title mb-3">${car.name}</h1>
           <div class="price-badge mb-3">
-            <span class="price">${car.price || 'Contact for Price'}</span>
+            <span class="price">${car.price}</span>
           </div>
           
           <p class="car-description mb-4">${car.description}</p>
@@ -251,7 +247,7 @@ else if (carDetail) {
             <h5>Specifications</h5>
             <ul class="specs-list">
               <li><strong>Category:</strong> ${car.category}</li>
-              ${car.features ? car.features.map(feature => `<li>${feature}</li>`).join('') : ''}
+              ${car.features.map(feature => `<li>${feature}</li>`).join('')}
             </ul>
           </div>
           
@@ -259,14 +255,15 @@ else if (carDetail) {
             <a href="product.html" class="btn btn-outline-light me-2">
               <i class="bi bi-arrow-left"></i> Back to Products
             </a>
-            <a href="#" class="btn btn-warning btn-lg">
-              <i class="bi bi-telephone"></i> Contact Us
+            <a href="mailto:info@autohustlembugua.com?subject=Inquiry about ${car.name}" class="btn btn-warning btn-lg">
+              <i class="bi bi-envelope"></i> Contact Us
             </a>
           </div>
         </div>
       </div>
 
       <!-- Related Cars Section -->
+      ${relatedCars.length > 0 ? `
       <div class="col-12">
         <div class="related-cars-section mt-5 py-5">
           <div class="container">
@@ -275,11 +272,11 @@ else if (carDetail) {
               ${relatedCars.map(relatedCar => `
                 <div class="col-md-4 mb-4">
                   <div class="card h-100">
-                    <img src="${relatedCar.images ? relatedCar.images[0] : relatedCar.image}" class="card-img-top" alt="${relatedCar.name}">
+                    <img src="${relatedCar.images[0]}" class="card-img-top" alt="${relatedCar.name}" loading="lazy">
                     <div class="card-body">
                       <h5 class="card-title">${relatedCar.name}</h5>
                       <p class="card-text">${relatedCar.description}</p>
-                      <p class="text-warning fw-bold">${relatedCar.price || 'Contact for Price'}</p>
+                      <p class="text-warning fw-bold">${relatedCar.price}</p>
                       <a href="car-detail.html?id=${relatedCar.id}" class="btn btn-warning">View Details</a>
                     </div>
                   </div>
@@ -293,14 +290,51 @@ else if (carDetail) {
           </div>
         </div>
       </div>
+      ` : ''}
+    `;
+  } else {
+    carDetail.innerHTML = `
+      <div class="col-12 text-center">
+        <h2 class="text-danger">Car not found</h2>
+        <p>The vehicle you're looking for doesn't exist.</p>
+        <a href="product.html" class="btn btn-outline-light">Back to Products</a>
+      </div>
     `;
   }
 }
 
-// Category filtering functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const categoryButtons = document.querySelectorAll('.category-btn');
+// Enhanced search functionality
+function setupSearch() {
+  const searchInput = document.getElementById('searchInput');
+  if (!searchInput) return;
   
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const filteredCars = cars.filter(car => 
+      car.name.toLowerCase().includes(searchTerm) ||
+      car.description.toLowerCase().includes(searchTerm) ||
+      car.category.toLowerCase().includes(searchTerm)
+    );
+    loadProducts(filteredCars);
+  });
+}
+
+// Initialize everything
+document.addEventListener('DOMContentLoaded', function() {
+  const productList = document.getElementById("product-list");
+  const carDetail = document.getElementById("car-detail");
+
+  if (productList && window.location.pathname.includes('index.html')) {
+    loadProducts(featuredCars);
+  } else if (productList && window.location.pathname.includes('product.html')) {
+    loadProducts(cars);
+    setupSearch();
+  } else if (carDetail) {
+    loadCarDetail();
+  }
+
+  // Category filtering
+  const categoryButtons = document.querySelectorAll('.category-btn');
   categoryButtons.forEach(button => {
     button.addEventListener('click', function() {
       const category = this.getAttribute('data-category');

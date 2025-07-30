@@ -1,3 +1,37 @@
+
+
+/* Base Responsive Settings */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Fix car detail layout for mobile */
+.car-detail-container .row {
+  margin: 0 !important;
+}
+
+.car-detail-container .col-lg-7,
+.car-detail-container .col-lg-5 {
+  padding: 0 !important;
+}
+
+@media (max-width: 991px) {
+  .car-detail-container .col-lg-7,
+  .car-detail-container .col-lg-5 {
+    padding: 15px !important;
+  }
+}
+
 .card-img-top {
   height: 300px;
   object-fit: cover;
@@ -53,7 +87,15 @@ body.product-page {
 
 .card {
   background-color: #161b22;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 193, 7, 0.3);
 }
 
 .card-title, .card-text, .btn {
@@ -169,7 +211,22 @@ body.product-page {
   border-bottom: none;
 }
 
-/* Carousel improvements */
+/* Enhanced Button Styles */
+.btn-outline-dark {
+  border: 2px solid #333;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #333;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Enhanced Carousel Controls */
 .carousel-control-prev,
 .carousel-control-next {
   background: rgba(0, 0, 0, 0.8) !important;
@@ -181,6 +238,7 @@ body.product-page {
   transform: translateY(-50%) !important;
   opacity: 0.9 !important;
   z-index: 10;
+  transition: all 0.3s ease;
 }
 
 .carousel-control-prev:hover,
@@ -188,6 +246,7 @@ body.product-page {
   background: rgba(255, 193, 7, 0.9) !important;
   border-color: #ffc107;
   opacity: 1 !important;
+  transform: translateY(-50%) scale(1.1) !important;
 }
 
 .carousel-control-prev-icon,
@@ -198,7 +257,7 @@ body.product-page {
   filter: brightness(0) invert(1);
 }
 
-/* Add carousel indicators (dots) */
+/* Carousel Indicators */
 .carousel-indicators {
   bottom: 20px !important;
   margin-bottom: 0;
@@ -212,17 +271,36 @@ body.product-page {
   height: 15px !important;
   margin: 0 8px !important;
   opacity: 0.7;
+  transition: all 0.3s ease;
 }
 
 .carousel-indicators .active {
   background-color: #ffc107 !important;
   opacity: 1;
   box-shadow: 0 0 10px rgba(255, 193, 7, 0.6);
+  transform: scale(1.2);
 }
 
-/* Ensure carousel has proper positioning */
-.carousel {
-  position: relative !important;
+/* Loading Animation */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 193, 7, 0.3);
+  border-top: 4px solid #ffc107;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Mobile responsive */
@@ -245,5 +323,172 @@ body.product-page {
   
   .related-cars-section .card-img-top {
     height: 180px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+
+
+/* Enhanced Mobile Responsive */
+@media (max-width: 768px) {
+  /* Car Detail Page Mobile Fixes */
+  .car-detail-img {
+    height: 40vh !important;
+    width: 100% !important;
+  }
+  
+  .car-detail-info {
+    padding: 1.5rem !important;
+    min-height: auto !important;
+  }
+  
+  .car-title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+  }
+  
+  .price-badge {
+    padding: 15px 25px !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  .price {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Product Cards Mobile */
+  .card-img-top {
+    height: 250px !important;
+  }
+  
+  .card-body {
+    padding: 1rem !important;
+  }
+  
+  .card-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .card-text {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Related Cars Section Mobile */
+  .related-cars-section {
+    padding: 2rem 0 !important;
+  }
+  
+  .related-cars-section .card-img-top {
+    height: 200px !important;
+  }
+  
+  .related-cars-section h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Carousel Controls Mobile */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  /* Action Buttons Mobile */
+  .action-buttons .btn {
+    width: 100% !important;
+    margin-bottom: 0.5rem;
+    padding: 12px !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Specs List Mobile */
+  .specs-list {
+    padding: 1rem !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  .specs-list li {
+    padding: 6px 0 !important;
+    font-size: 0.9rem;
+  }
+  
+  /* Hero Section Mobile */
+  .hero-section {
+    padding-top: 60px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  .car-hero-image {
+    max-width: 100% !important;
+    margin-top: 1rem;
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 576px) {
+  .car-detail-img {
+    height: 35vh !important;
+  }
+  
+  .car-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .price {
+    font-size: 1.3rem !important;
+  }
+  
+  .car-detail-info {
+    padding: 1rem !important;
+  }
+  
+  .price-badge {
+    padding: 12px 20px !important;
+  }
+  
+  .card-img-top {
+    height: 200px !important;
+  }
+  
+  /* Navigation improvements */
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+  
+  .navbar-brand img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  
+  /* Container padding for mobile */
+  .container,
+  .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .car-detail-img {
+    height: 60vh !important;
   }
 }
