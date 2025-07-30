@@ -1,5 +1,3 @@
-
-
 /* Base Responsive Settings */
 * {
   box-sizing: border-box;
@@ -33,7 +31,7 @@ img {
 }
 
 .card-img-top {
-  height: 300px;
+  height: 250px;  /* Change from 300px to 250px */
   object-fit: cover;
 }
 .hero-section {
@@ -125,9 +123,9 @@ body.product-page {
 }
 
 .car-detail-img {
-  height: 70vh;
-  width: 50%;
-  object-fit: cover;
+  height: 50vh;
+  width: 100%;
+  object-fit: contain;
 }
 
 .car-detail-info {
@@ -369,7 +367,7 @@ body.product-page {
   
   /* Product Cards Mobile */
   .card-img-top {
-    height: 250px !important;
+    height: 400px !important;  /* Make even smaller on mobile */
   }
   
   .card-body {
@@ -465,7 +463,7 @@ body.product-page {
   }
   
   .card-img-top {
-    height: 200px !important;
+    height: 350px !important;  /* Even smaller for very small screens */
   }
   
   /* Navigation improvements */
