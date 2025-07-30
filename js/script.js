@@ -255,8 +255,8 @@ else if (carDetail) {
             <a href="product.html" class="btn btn-outline-light me-2">
               <i class="bi bi-arrow-left"></i> Back to Products
             </a>
-            <a href="mailto:info@autohustlembugua.com?subject=Inquiry about ${car.name}" class="btn btn-warning btn-lg">
-              <i class="bi bi-envelope"></i> Contact Us
+            <a href="https://wa.me/254791734605?text=Hi+Auto+Hustle%2C+I%27m+interested+in+the+${car.name.replace(/ /g, '+')}+priced+at+${car.price.replace(/ /g, '+')}" target="_blank" class="btn btn-warning btn-lg">
+              <i class="bi bi-whatsapp"></i> Contact Us
             </a>
           </div>
         </div>
