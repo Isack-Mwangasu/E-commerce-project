@@ -7,9 +7,7 @@ const cars = [
     category: "Truck", 
     images: [
       "assets/img/Hilux front.jpeg",
-      "assets/img/hilux-side.jpeg",
-      "assets/img/hilux-interior.jpeg",
-      "assets/img/hilux-back.jpeg"
+      "assets/img/Hilux back.jpeg"
     ],
     description: "Reliable and fuel efficient pickup truck.",
     price: "2,500,000 KSH",
@@ -49,8 +47,10 @@ const cars = [
     category: "SUV", 
     images: [
       "assets/img/landrover.2.jpeg",
-      "assets/img/discovery-interior.jpeg",
-      "assets/img/discovery-side.jpeg"
+      "assets/img/landrover1.jpeg",
+      "assets/img/landrover.4.jpeg",
+      "assets/img/landrover.3.jpeg",
+      "assets/img/landrover.5.jpeg"
     ],
     description: "Perfect for off-road adventures.",
     price: "5,800,000 KSH",
@@ -90,8 +90,17 @@ const cars = [
     category: "Sedan", 
     images: [
       "assets/img/Impreza1.jpeg",
-      "assets/img/impreza-interior.jpeg",
-      "assets/img/impreza-side.jpeg"
+      "assets/img/Impreza2.jpeg",
+      "assets/img/Impreza3.jpeg",
+      "assets/img/Impreza4.jpeg",
+      "assets/img/Impreza5.jpeg",
+      "assets/img/Impreza7.jpeg",
+      "assets/img/Impreza8.jpeg",
+      "assets/img/Impreza9.jpeg",
+      "assets/img/Impreza10.jpeg",
+      "assets/img/Impreza11.jpeg",
+      "assets/img/Impreza12.jpeg",
+      "assets/img/Impreza13.jpeg"
     ],
     description: "Reliable all-wheel drive sedan.",
     price: "1,800,000 KSH",
@@ -99,12 +108,23 @@ const cars = [
   },
   { 
     id: 8, 
-    name: "Toyota Camry", 
+    name: "juke Toyota Camry", 
     category: "Sedan", 
     images: [
-      "assets/img/toyota-camry.jpeg",
-      "assets/img/camry-interior.jpeg",
-      "assets/img/camry-side.jpeg"
+      "assets/img/juke1.jpeg",
+      "assets/img/juke2.jpeg",
+      "assets/img/juke3.jpeg",
+      "assets/img/juke4.jpeg",
+      "assets/img/juke5.jpeg",
+      "assets/img/juke6.jpeg",
+      "assets/img/juke7.jpeg",
+      "assets/img/juke8.jpeg",
+      "assets/img/juke9.jpeg",
+      "assets/img/juke10.jpeg",
+      "assets/img/juke11.jpeg",
+      "assets/img/juke12.jpeg",
+      "assets/img/juke13.jpeg",
+      "assets/img/juke14.jpeg",
     ],
     description: "Popular family sedan with excellent fuel economy.",
     price: "2,200,000 KSH",
