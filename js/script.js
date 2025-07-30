@@ -351,3 +351,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Mobile touch improvements
+document.addEventListener('DOMContentLoaded', function() {
+  // Improve touch interactions on mobile
+  if ('ontouchstart' in window) {
+    document.body.classList.add('touch-device');
+  }
+  
+  // Prevent horizontal scroll on mobile
+  document.body.style.overflowX = 'hidden';
+});
