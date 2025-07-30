@@ -319,6 +319,54 @@ function setupSearch() {
   });
 }
 
+// Homepage search functionality 
+function setupHomepageSearch() {
+  const searchInput = document.getElementById('homeSearchInput');
+  const searchBtn = document.getElementById('homeSearchBtn');
+  const budgetButtons = document.querySelectorAll('.budget-filter');
+  
+  let selectedBudget = null;
+  
+  // Budget filter selection
+  budgetButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove active from all
+      budgetButtons.forEach(btn => {
+        btn.classList.remove('btn-warning');
+        btn.classList.add('btn-outline-secondary');
+      });
+      
+      // Make this one active
+      this.classList.remove('btn-outline-secondary');
+      this.classList.add('btn-warning');
+      
+      selectedBudget = {
+        min: this.dataset.min,
+        max: this.dataset.max
+      };
+    });
+  });
+  
+  // Search button click
+  if (searchBtn) {
+    searchBtn.addEventListener('click', function() {
+      const searchTerm = searchInput ? searchInput.value : '';
+      let url = 'product.html';
+      
+      if (searchTerm || selectedBudget) {
+        url += '?';
+        if (searchTerm) url += `search=${searchTerm}`;
+        if (selectedBudget) {
+          if (searchTerm) url += '&';
+          url += `min=${selectedBudget.min}&max=${selectedBudget.max}`;
+        }
+      }
+      
+      window.location.href = url;
+    });
+  }
+}
+
 // Initialize everything
 document.addEventListener('DOMContentLoaded', function() {
   const productList = document.getElementById("product-list");
@@ -326,8 +374,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (productList && window.location.pathname.includes('index.html')) {
     loadProducts(featuredCars);
+    setupHomepageSearch(); // ADD THIS LINE
   } else if (productList && window.location.pathname.includes('product.html')) {
-    loadProducts(cars);
+    // Check for search parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const search = urlParams.get('search');
+    const min = urlParams.get('min');
+    const max = urlParams.get('max');
+    
+    let filteredCars = cars;
+    
+    // Filter by search term
+    if (search) {
+      filteredCars = filteredCars.filter(car => 
+        car.name.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+    
+    // Filter by price range
+    if (min && max) {
+      filteredCars = filteredCars.filter(car => {
+        const price = parseInt(car.price.replace(/[^\d]/g, ''));
+        return price >= parseInt(min) && price <= parseInt(max);
+      });
+    }
+    
+    loadProducts(filteredCars);
     setupSearch();
   } else if (carDetail) {
     loadCarDetail();

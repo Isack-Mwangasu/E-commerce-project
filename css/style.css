@@ -490,3 +490,11 @@ body.product-page {
     height: 60vh !important;
   }
 }
+
+/* Add this at the end of your CSS file */
+
+.budget-filter.btn-warning {
+  background-color: #ffc107 !important;
+  border-color: #ffc107 !important;
+  color: #000 !important;
+}

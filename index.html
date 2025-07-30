@@ -66,25 +66,25 @@
     <h2 class="fw-bold mb-2">Find what fits you</h2>
     <p class="mb-4">We help you find a car that fits your personality, dream and pocket!</p>
 
-
     <!-- Search Input -->
     <div class="input-group mb-4 mx-auto" style="max-width: 600px;">
       <span class="input-group-text bg-dark border-secondary text-white"><i class="bi bi-search"></i></span>
-      <input type="text" class="form-control bg-dark text-white border-secondary" placeholder="Search vehicle name">
+      <input type="text" id="homeSearchInput" class="form-control bg-dark text-white border-secondary" placeholder="Search vehicle name">
     </div>
 
     <!-- Budget Filter -->
     <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-      <button class="btn btn-outline-secondary btn-sm">0 - 500K</button>
-      <button class="btn btn-outline-secondary btn-sm">500K - 1M</button>
-      <button class="btn btn-outline-secondary btn-sm">1M - 2M</button>
-      <button class="btn btn-outline-secondary btn-sm">2M - 3M</button>
-      <button class="btn btn-outline-secondary btn-sm">3M - 5M</button>
-      <button class="btn btn-outline-secondary btn-sm">5M - 10M</button>
-      <button class="btn btn-outline-secondary btn-sm">Above 10M</button>
+      <button class="btn btn-outline-secondary btn-sm budget-filter" data-min="0" data-max="500000">0 - 500K</button>
+      <button class="btn btn-outline-secondary btn-sm budget-filter" data-min="500000" data-max="1000000">500K - 1M</button>
+      <button class="btn btn-outline-secondary btn-sm budget-filter" data-min="1000000" data-max="2000000">1M - 2M</button>
+      <button class="btn btn-outline-secondary btn-sm budget-filter" data-min="2000000" data-max="3000000">2M - 3M</button>
+      <button class="btn btn-outline-secondary btn-sm budget-filter" data-min="3000000" data-max="5000000">3M - 5M</button>
+      <button class="btn btn-outline-secondary btn-sm budget-filter" data-min="5000000" data-max="10000000">5M - 10M</button>
+      <button class="btn btn-outline-secondary btn-sm budget-filter" data-min="10000000" data-max="999999999">Above 10M</button>
     </div>
+    
     <!-- Search Button -->
-    <button class="btn btn-dark btn-lg w-100" style="max-width: 600px;">Search</button>
+    <button id="homeSearchBtn" class="btn btn-warning btn-lg w-100" style="max-width: 600px;">Search Vehicles</button>
   </div>
 </section>
 
