@@ -165,7 +165,10 @@ function loadProducts(products) {
               <p class="card-text">${car.description}</p>
               <p class="text-warning fw-bold">${car.price}</p>
               <p class="text-muted">Category: ${car.category}</p>
-              <a href="car-detail.html?id=${car.id}" class="btn btn-warning w-100">View Details</a>
+              <a href="car-detail.html?id=${car.id}" class="btn btn-warning w-100 mb-2">View Details</a>
+              <a href="https://wa.me/254791734605?text=Hi+Auto+Hustle%2C+I%27m+interested+in+the+${car.name.replace(/ /g, '+')}+priced+at+${car.price.replace(/ /g, '+')}" target="_blank" class="btn btn-outline-warning w-100">
+                <i class="bi bi-whatsapp"></i> WhatsApp
+              </a>
             </div>
           </div>
         </div>
